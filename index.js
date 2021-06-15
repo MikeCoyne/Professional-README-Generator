@@ -1,10 +1,9 @@
 const inquirer = require('inquirer');
-const fs = require9'fs');
-const path = require9'path');
-const readMeGen  = require('/.utils/readMeGen');
+const fs = require('fs');
+const path = require('path');
+const READMEg  = require('./utils/READMEg');
 
-inquire
-    .prompt([
+const questions = [
         {
             type: 'input',
             name: 'Title',
@@ -13,7 +12,7 @@ inquire
         {
             type: 'input',
             name: 'Description',
-            message: 'Please describe your project.'
+            message: 'Please describe your project.',
         },
         {
             type: 'input',
@@ -36,7 +35,7 @@ inquire
             message: 'Please enter license information for this project.',
         },
         {
-            type: 'Contributing',
+            type: 'input',
             name: 'Contributors',
             message: 'Please list contributors to this project.',
         },
@@ -44,7 +43,7 @@ inquire
             type: 'input',
             name: 'Tests',
             message: 'Please describe testing for your project.',
-        }
+        },
         {
             type: 'input',
             name: 'Questions',
@@ -55,11 +54,17 @@ inquire
             name: 'Questions',
             message: 'Please provide your email address.',
         },
-    ])
+    ];
+
+    function writeToFile(fileName, data) {
+        return fs.writeFileSync(path.join(process.cwd(), fileName), data)
+    };
 
     function init(){
-        inquirer.prompt(questions).then((inquirerResponse)) => {
-            console.log("Complete!:);
-            writetoFile("Readme.md, readmeGen({...inquireResponse}")
-        }
-    }
+        inquirer.prompt(questions).then((inquirerResponse) => {
+            console.log("Complete!");
+            writeToFile("README.md", READMEg({...inquirerResponse}));
+        });
+    };
+
+    init();
