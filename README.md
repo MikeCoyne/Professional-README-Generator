@@ -1,9 +1,9 @@
 # undefined
     ## Title 
-    a;
+    README Generator;
 
     ## Description
-    a
+    It assists a web developer in quickly generating a quality README.md file. It includes prompts for the user to anwer a few questions about their project, including Title, Description, Table of Contents, instructions for installation and usage, license information, contributors to the project, testing information, and contact information for questions, including Github profile.
 
     ## Table of Contents
     1. Title
@@ -20,19 +20,19 @@
     undefined
 
     ## Installation
-    d
+    Run in node and follow prompts
 
     ## Usage
-    e
+    A web developer follows the promtps to input the information which is compiled into the README.md file.
 
     ## License
-    f
+    MIT
 
     ## Contributors
-    g
+    Mike Coyne
 
     ## Tests 
-    h
+    not done yet
 
     ## Questions
-    i
+    github.com/MikeCoyne
